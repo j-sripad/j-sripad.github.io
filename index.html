@@ -1,533 +1,536 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="msapplication-config" content="./assets/img/favicons/browserconfig.xml">
-    <meta name="theme-color" content="#ffffff">
-    <title>Sripad Joshi</title>
-    <!-- Favicons -->
-    <link rel="apple-touch-icon" sizes="180x180" href="./assets/img/favicons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="./assets/img/favicons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./assets/img/favicons/favicon-16x16.png">
-    <link rel="manifest" href="./assets/img/favicons/site.webmanifest">
-    <link rel="mask-icon" href="./assets/img/favicons/safari-pinned-tab.svg" color="#5bbad5">
-    <link rel="shortcut icon" href="./assets/img/favicons/favicon.ico">
-    <!-- Font Awesome icons (free version)-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"
-        crossorigin="anonymous"></script>
-    <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="css/styles.css" rel="stylesheet">
-    <!-- Fonts CSS-->
-    <link rel="stylesheet" href="css/heading.css">
-    <link rel="stylesheet" href="css/body.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sripad Joshi | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+  --primary: #54b9ff;
+  --primary-accent: #2686c5;
+  --section-title: #ffae4e;
+  --background: #101114;
+  --surface: #181b22;
+  --surface-alt: #232833;
+  --border: #263141;
+  --text-main: #e9eef2;
+  --text-body: #c4ccd4;
+  --text-light: #7b8fa5;
+  --nav-bg: #191b1f;
+  --nav-link: #bcc8d7;
+  --nav-link-hover: #54b9ff;
+  --footer: #789;
+}
+[data-theme="light"] {
+  --primary: #2074c8;
+  --primary-accent: #165999;
+  --section-title: #f6a828;
+  --background: #f7f9fa;
+  --surface: #fff;
+  --surface-alt: #e9eef2;
+  --border: #d1d9e6;
+  --text-main: #202430;
+  --text-body: #4b5667;
+  --text-light: #949eb2;
+  --nav-bg: #e9eef2;
+  --nav-link: #44516a;
+  --nav-link-hover: #2074c8;
+  --footer: #888;
+}
+* { box-sizing: border-box; scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  background-color: var(--background);
+  color: var(--text-main);
+  font-size: 0.99rem;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  line-height: 1.62;
+  transition: background 0.25s, color 0.22s;
+}
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: var(--nav-bg);
+  padding: 0.72rem 1.4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  box-shadow: 0 1px 10px #0002;
+}
+nav .logo {
+  font-weight: 900;
+  font-size: 1.13rem;
+  color: var(--primary);
+  letter-spacing: 0.04em;
+}
+nav a {
+  margin-left: 1.07rem;
+  color: var(--nav-link);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.97rem;
+  letter-spacing: 0.01em;
+  transition: color 0.22s;
+}
+nav a:hover {
+  color: var(--nav-link-hover);
+}
+.theme-toggle {
+  margin-left: 1.33rem;
+  cursor: pointer;
+  font-size: 1.14rem;
+  padding: 0.1rem 0.41rem;
+  border: none;
+  background: none;
+  color: var(--primary);
+  transition: color 0.19s;
+}
+main {
+  max-width: 900px;
+  margin: 5.2rem auto 2.4rem;
+  padding: 0 1rem;
+}
+h1 {
+  font-size: 2.22rem;
+  margin-bottom: 0.28rem;
+  color: var(--primary);
+  font-weight: 900;
+  letter-spacing: -0.01em;
+}
+h2 {
+  font-size: 1.31rem;
+  margin-top: 2.1rem;
+  color: var(--section-title);
+  border-bottom: 1px solid #37415155;
+  padding-bottom: 0.35rem;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+}
+section {
+  margin-bottom: 2.1rem;
+  padding-bottom: 1.3rem;
+  border-bottom: 1px dashed #26314133;
+}
+.intro {
+  display: flex;
+  align-items: center;
+  gap: 1.45rem;
+}
+.intro img {
+  width: 200px;
+  height: 200px;
+  border-radius: 12px;
+  object-fit: cover;
+  background-color: #ffffff09;
+  padding: 4px;
+  border: 2px solid var(--primary);
+  box-shadow: 0 1.2px 10px #009cff18;
+}
+.intro p {
+  max-width: 510px;
+  font-size: 1.01rem;
+  color: var(--text-body);
+  font-weight: 500;
+  margin-top: 0.5rem;
+}
+.links a {
+  display: inline-block;
+  margin-right: 0.87rem;
+  background: #202732;
+  color: #e3f3ff;
+  text-decoration: none;
+  padding: 0.32rem 0.81rem;
+  border-radius: 5px;
+  font-size: 0.91rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  box-shadow: 0 1.2px 3px #0001;
+  transition: background 0.21s, color 0.16s, transform 0.13s;
+}
+.links a:hover {
+  background: var(--primary);
+  color: #101114;
+  transform: scale(1.04);
+}
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.77rem 1.4rem;
+  align-items: flex-start;
+  margin-top: 0.9rem;
+  margin-bottom: 0.4rem;
+}
+.skill-item {
+  text-align: center;
+  width: 88px;
+  background: var(--surface);
+  border-radius: 8px;
+  padding: 0.77rem 0.33rem 0.6rem 0.33rem;
+  box-shadow: 0 1.5px 5px #0002;
+  border: 1px solid #23283b;
+  transition: box-shadow 0.18s, border 0.18s, transform 0.18s, background 0.21s;
+  font-size: 0.88rem;
+  color: var(--text-main);
+  font-weight: 600;
+}
+.skill-item:hover {
+  border: 1px solid var(--primary);
+  box-shadow: 0 3px 13px #61dafb16;
+  transform: translateY(-2px) scale(1.035);
+  background: var(--surface-alt);
+  color: var(--primary);
+}
+.skill-item img {
+  width: 36px;
+  height: 36px;
+  margin-bottom: 0.36rem;
+  filter: drop-shadow(0 1.2px 5px #1113);
+  background: #fff;
+  border-radius: 7px;
+  padding: 2px;
+  object-fit: contain;
+}
+.project, .job, .edu, .pub {
+  background: var(--surface);
+  padding: 1rem 0.9rem;
+  border-left: 3.2px solid var(--primary);
+  border-radius: 6px;
+  box-shadow: 0 2px 7px #0002;
+  margin-top: 1.1rem;
+  transition: box-shadow 0.22s, background 0.13s;
+  font-size: 0.99rem;
+  color: var(--text-body);
+  font-weight: 500;
+}
+.job.whiterabbit {
+  font-size: 0.87rem;
+  color: var(--text-light);
+}
+.project:hover, .job:hover, .edu:hover, .pub:hover {
+  background: var(--surface-alt);
+  box-shadow: 0 4px 13px #54b9ff22;
+  color: var(--primary-accent);
+}
+.project a, .pub a {
+  color: var(--primary);
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 1.02rem;
+  letter-spacing: 0.01em;
+  transition: color 0.15s;
+}
+.project a:hover, .pub a:hover {
+  color: var(--section-title);
+  text-decoration: underline;
+}
+.contact-info a {
+  color: var(--primary-accent);
+  text-decoration: underline;
+  font-weight: 600;
+}
+footer {
+  text-align: center;
+  font-size: 0.93rem;
+  color: var(--footer);
+  margin: 2.8rem 0 1.4rem;
+  letter-spacing: 0.01em;
+  font-weight: 500;
+}
+@media (max-width: 700px) {
+  main { margin-top: 3.2rem; }
+  .intro { flex-direction: column; align-items: flex-start; gap: 0.8rem; }
+  h1 { font-size: 1.35rem; }
+  h2 { font-size: 1.01rem; }
+  nav { padding: 0.6rem 0.5rem; }
+  .skill-item { width: 75px; font-size: 0.81rem; }
+  .skill-item img { width: 29px; height: 29px; }
+}
+
+  </style>
 </head>
-
-<body id="page-top" style="background-color:#0f1a28;">
-    <nav class="navbar navbar-expand-lg bg-secondary fixed-top" id="mainNav">
-        <div class="container"><a class="navbar-brand js-scroll-trigger" href="#page-top">Sripad Joshi</a>
-            <button class="navbar-toggler navbar-toggler-right font-weight-bold bg-primary text-white rounded"
-                type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
-                aria-expanded="false" aria-label="Toggle navigation"><i class="fas fa-bars"></i></button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-
-                <ul class="navbar-nav ml-auto">
-                    <!-- <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
-                            href="#experience">EXPERIENCE</a>
-                    </li> -->
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
-                            href="#portfolio">PROJECTS</a>
-                    </li>
-
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
-                            href="#PUBLICATIONS">PUBLICATIONS</a>
-                    </li>
-
-                    <!-- <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
-                            href="#skills">SKILLS</a>
-                    </li> -->
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
-                            href="#about">ABOUT</a>
-                    </li>
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
-                            href="#contact">CONTACT</a>
-                    </li>
-                </ul>
-            </div>
+<body>
+  <nav>
+    <div class="logo">Sripad Joshi</div>
+    <div>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="#publications">Publications</a>
+      <a href="#contact">Contact</a>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light mode">🌙</button>
+    </div>
+  </nav>
+  <main>
+    <section id="about">
+      <div class="intro">
+        <img src="profile.jpeg" alt="Profile Picture" />
+        <div>
+          <h1>Sripad Joshi</h1>
+          <p>AI Research Engineer passionate about multimodal deep learning and medical imaging. Currently working at Whiterabbit.ai, building intelligent medical imaging solutions.</p>
+          <div class="links">
+            <a href="mailto:joshii.sripad@gmail.com">Email</a>
+            <a href="https://www.linkedin.com/in/sripadjoshi/">LinkedIn</a>
+            <a href="https://github.com/j-sripad">GitHub</a>
+          </div>
         </div>
-    </nav>
-    <header class="masthead bg-primary text-white text-center">
-        <div class="container d-flex align-items-center flex-column">
-            <!-- Masthead Avatar Image--><img class="masthead-avatar mb-5" src="assets/img/Profile.jpeg"
-                alt="Sripad image" style="border-radius: 20px;">
-            <!-- Masthead Heading-->
-            <h1 class="masthead-heading mb-0" style="font-size: x-large;">Sripad Joshi</h1>
-            <!-- Icon Divider-->
-            <div class="divider-custom divider-light">
-                <div class="divider-custom-line"></div>
-                <div class="divider-custom-icon"><i class="fas fa-id-badge"></i></div>
-                <div class="divider-custom-line"></div>
-            </div>
-            <!-- Masthead Subheading-->
-            <p class="pre-wrap masthead-subheading font-weight-light mb-0">Machine Learning Engineer | Computer Vision | Deep Learning</p>
+      </div>
+    </section>
+   <section id="experience">
+  <h2>Experience</h2>
 
-            <!-- <div class="row">
-                <div class="col-lg-4 mb-5 mb-lg-0">
-                    <h6 class="mb-4"></h6>
-                    <p class="pre-wrap lead mb-0"> </p>
-                </div> -->
-            <!-- Footer Social Icons-->
-            <div class="col-lg-4 mb-5 mb-lg-0">
-                <br>
-                <h6 class="mb-4" style="font-size:medium;">AROUND THE WEB</h6>
+  <div class="job">
+    <img src="https://media.licdn.com/dms/image/v2/C4E0BAQFuAmuraT9GCg/company-logo_200_200/company-logo_200_200/0/1630642895407/whiterabbitai_logo?e=2147483647&v=beta&t=_djVOFkq97TeJ-TdeB_HQ-4e6nMAsJO4qUJFJqkHuQs" alt="Whiterabbit.ai logo" style="width:44px;height:44px;border-radius:8px;object-fit:contain;background:#fff;border:1px solid #eee;padding:3px;margin-right:14px;vertical-align:middle;">
+    <div>
+      <strong>AI Research Engineer</strong> – Whiterabbit.ai<br>
+      <span style="font-size:0.99em; color:var(--text-light); font-weight:500;">Santa Clara, CA</span><br>
+      <span style="font-size:0.98em; color:var(--text-light); font-style:italic;">June 2023 – Present</span>
+    </div>
+    <ul style="margin-top:8px; color:inherit;">
+      <li>Built self-supervised 3D detection pipelines, optimized TTA and model lifecycle tooling.</li>
+      <li>Investigated and resolved model instabilities, addressing core model characteristics to improve robustness.</li>
+      <li>Worked extensively with vision-language models (VLMs) for grounding tasks, enabling automated generation of bounding box annotations by integrating both images and clinical reports as input.</li>
+      <li>Drove research on semi-supervised object detection and image quality assessment projects.</li>
+      <li>Coordinated data preparation and annotation initiatives.</li>
+    </ul>
+  </div>
 
+  <div class="job">
+    <img src="https://media.licdn.com/dms/image/v2/C4E0BAQFuAmuraT9GCg/company-logo_200_200/company-logo_200_200/0/1630642895407/whiterabbitai_logo?e=2147483647&v=beta&t=_djVOFkq97TeJ-TdeB_HQ-4e6nMAsJO4qUJFJqkHuQs" alt="Whiterabbit.ai logo" style="width:44px;height:44px;border-radius:8px;object-fit:contain;background:#fff;border:1px solid #eee;padding:3px;margin-right:14px;vertical-align:middle;">
+    <div>
+      <strong>A.I Research Engineer Intern</strong> – Whiterabbit.ai<br>
+      <span style="font-size:0.99em; color:var(--text-light); font-weight:500;">Bloomington, IN</span><br>
+      <span style="font-size:0.98em; color:var(--text-light); font-style:italic;">12 Sept 2022 – 15 Dec 2022</span>
+    </div>
+    <ul style="margin-top:8px; color:inherit;">
+      <li>Examined malignancy classifier models for calibration errors.</li>
+      <li>Enhanced model interpretability by integrating layer-wise relevance propagation-based Class Activation Mapping (CAM) to visualize input regions contributing to predictions.</li>
+    </ul>
+  </div>
 
-                <li class="list-inline-item">
-                    <a target="blank" href="https://github.com/j-sripad">
-                        <span class="fa-stack fa-lg">
-                            <i class="fas fa-circle fa-stack-2x" ></i>
-                            <i class="fab fa-github fa-stack-1x fa-inverse"></i>
-                        </span>
-                    </a>
-                </li>
-                <li class="list-inline-item">
-                    <a target="blank" href="https://linkedin.com/in/sripadjoshi">
-                        <span class="fa-stack fa-lg">
-                            <i class="fas fa-circle fa-stack-2x"></i>
-                            <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
-                        </span>
-                    </a>
-                </li>
-                <br><br>
-                <a target="_blank" href="./assets/img/Sripad_CV_Masters.pdf">
-                    <button
-                        class="navbar-toggler navbar-toggler-right font-weight-light bg-secondary text-white rounded">
-                        Download Resume
-                    </button>
-                </a>
-                </li>
-            </div>
-            <!-- <div class="col-lg-4 mb-5 mb-lg-0">
-                    <br>
-                    <a target="_blank" href="./assets/img/Sripad_CV_Masters.pdf">
-                       <button style="background-color: #117964;color: white;border-radius: 20px;border-style: hidden;">
-                           Download CV
-                       </button>
-                    </a>
-                    </li>
-                </div> -->
-    </header>
-    
-    <section class="page-section portfolio" id="portfolio">
-        <div class="container">
-            <!-- Portfolio Section Heading-->
-            <div class="text-center">
-                <h2 style="font-size: larger;color:white;">PROJECTS</h2>
-            </div>
-            <!-- Icon Divider-->
-            <div class="divider-custom">
-                <div class="divider-custom-line"></div>
-                <div class="divider-custom-icon"><i class="fas fa-code"></i></div>
-                <div class="divider-custom-line"></div>
-            </div>
-            <!-- Portfolio Grid Items-->
-            <div class="row">
-                <div class="col-lg-4 col-sm-6 mb-4">
-                    <div class="card h-100">
-                        <img class="card-img-top" src="https://image.freepik.com/free-vector/black-neural-texture-abstract-vector_53876-86336.jpg" alt="">
-                        <div class="card-body">
-                            <h6 class="card-title" style="color: #117964;">
-                                MultiResUnet - Pytorch implementation
-                            </h6>
-                            <p class="card-text">
-                                <span class="badge badge-primary">Deep Learning</span>
-                                <span class="badge badge-warning">Computer Vision</span>
-                                </br></br>A pytorch implementation of multiresunet, a segmentation model for medical
-                                images semantic segmentation.
-                            </p>
-                            <a target="_blank" href="https://github.com/j-sripad/mulitresunet-pytorch">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fas fa-circle fa-stack-2x"></i>
-                                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
-                                </span>
-                            </a>
-                        </div>
+  <div class="job">
+    <img src="https://media.licdn.com/dms/image/v2/C4E0BAQFuAmuraT9GCg/company-logo_200_200/company-logo_200_200/0/1630642895407/whiterabbitai_logo?e=2147483647&v=beta&t=_djVOFkq97TeJ-TdeB_HQ-4e6nMAsJO4qUJFJqkHuQs" alt="Whiterabbit.ai logo" style="width:44px;height:44px;border-radius:8px;object-fit:contain;background:#fff;border:1px solid #eee;padding:3px;margin-right:14px;vertical-align:middle;">
+    <div>
+      <strong>Research Scientist Intern</strong> – Whiterabbit.ai<br>
+      <span style="font-size:0.99em; color:var(--text-light); font-weight:500;">Santa Clara, CA</span><br>
+      <span style="font-size:0.98em; color:var(--text-light); font-style:italic;">30 May 2022 – 19 Aug 2022</span>
+    </div>
+    <ul style="margin-top:8px; color:inherit;">
+      <li>Implemented normalizer-free deep convolutional networks with adaptive gradient clipping using ResNet-22 as the base architecture.</li>
+      <li>Conducted empirical comparisons between Sync Batch Normalization and Normalizer-Free Networks (NF-Nets), demonstrating that NF-Nets train faster and generalize better.</li>
+    </ul>
+  </div>
 
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-sm-6 mb-4">
-                    <div class="card h-100">
-                        <img class="card-img-top" src="https://image.freepik.com/free-vector/pink-nerve-network-banner-digital-healthcare_53876-117496.jpg" alt="">
-                        <div class="card-body">
-                            <h6 class="card-title" style="color: #117964;">
-                                Tiramisu segmentation model - Pytorch implementation
-                            </h6>
-                            <p class="card-text">
-                                <span class="badge badge-primary">Deep Learning</span>
-                                <span class="badge badge-warning">Computer Vision</span>
-                                </br></br>A pytorch implementation of Tiramisu, a segmentation model for medical images
-                                semantic segmentation.
-                            </p>
-                            <a target="_blank" href="https://github.com/j-sripad/Tiramisu-pytorch">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fas fa-circle fa-stack-2x"></i>
-                                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
-                                </span>
-                            </a>
-                        </div>
-
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-sm-6 mb-4">
-                    <div class="card h-100">
-                        <img class="card-img-top" src="./assets/img/mass.jpeg" alt="Mass">
-                        <div class="card-body">
-                            <h6 class="card-title" style="color: #117964;">
-                                <p>Mass and Micro calcification in Mammogram images</p>
-                            </h6>
-                            <p class="card-text">
-                                <span class="badge badge-danger">Breast cancer</span>
-                                <span class="badge badge-primary">Computer vision</span>
-                                <span class="badge badge-primary">Deep Learning</span>
-                                </br></br>Mass and calcification lesions detection in breast CT scans(Mammograms) using
-                                Faster RCNN.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6 mb-4">
-                    <div class="card h-100">
-                        <img class="card-img-top" src="./assets/img/mitosis.jpeg" alt="Mitosis  Detection">
-                        <div class="card-body">
-                            <h6 class="card-title" style="color: #117964;">
-                                Mitosis Detection
-                            </h6>
-                            <p class="card-text">
-                                <span class="badge badge-primary">Deep Learning</span>
-                                <span class="badge badge-primary">Computer Vision</span>
-                                <span class="badge badge-primary">Linknet</span>
-                                </br></br>A tool to detect mitosis in breast tissue H & E biopsies. Used Linknet for mitosis
-                                 detection.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6 mb-4">
-                    <div class="card h-100">
-                        <img class="card-img-top" src="./assets/img/pose.jpeg" alt="Pose estimation for rep  Counting">
-                        <div class="card-body">
-                            <h6 class="card-title" style="color: #117964;">
-                                Pose estimation for exercise rep Counting
-                            </h6>
-                            <p class="card-text">
-                                <span class="badge badge-primary">Deep Learning</span>
-                                <span class="badge badge-primary">Computer Vision</span>
-                                <span class="badge badge-primary">PoseNet</span>
-                                </br></br>Python tool to do exercise repetition counting.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6 mb-4">
-                    <div class="card h-100">
-                        <img class="card-img-top" src="./assets/img/voting.jpg" alt="Vote">
-                        <div class="card-body">
-                            <h6 class="card-title" style="color: #117964;">
-                                Voting Tool
-                            </h6>
-                            <p class="card-text">
-                                <span class="badge badge-primary">Java</span>
-                                <span class="badge badge-primary">Frames</span>
-                                </br></br>Java based application for online polls
-
-                            </p>
-                            <a target="_blank" href="https://github.com/j-sripad/Voting-application-using-java">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fas fa-circle fa-stack-2x"></i>
-                                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
-                                </span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+  <div class="job">
+    <img src="https://assets.iu.edu/brand/3.3.x/trident-large.png" alt="Indiana University logo" style="width:44px;height:44px;border-radius:8px;object-fit:contain;background:#fff;border:1px solid #eee;padding:3px;margin-right:14px;vertical-align:middle;">
+    <div>
+      <strong>Research Assistant</strong> – Cyberinfrastructure for Network Science Center, Indiana University<br>
+      <span style="font-size:0.99em; color:var(--text-light); font-weight:500;">Bloomington, IN</span><br>
+      <span style="font-size:0.98em; color:var(--text-light); font-style:italic;">Jan 2022 – May 2022</span>
+    </div>
+    <ul style="margin-top:8px; color:inherit;">
+      <li>Streamlined the data pre-processing pipeline of gigabyte-scale image data, reducing processing time by 40%.</li>
+      <li>Generated annotations for a Kaggle competition (<a href="https://www.kaggle.com/competitions/hubmap-organ-segmentation" target="_blank" style="color:inherit;">HuBMAP Organ Segmentation</a>), contributing to competitive and accurate submissions.</li>
+    </ul>
+  </div>
+  
+  <div class="job">
+    <img src="https://media.licdn.com/dms/image/v2/C510BAQGX1N8l82M46A/company-logo_200_200/company-logo_200_200/0/1631406151625?e=1753920000&v=beta&t=_KI2YCmrmj_EogLdgOyoc3m3aVIKjDbgkNxATZ3ifD8" alt="Onward Assist logo" style="width:44px;height:44px;border-radius:8px;object-fit:contain;background:#fff;border:1px solid #eee;padding:3px;margin-right:14px;vertical-align:middle;">
+    <div>
+      <strong>Machine Learning Engineer</strong> – Onward Assist<br>
+      <span style="font-size:0.99em; color:var(--text-light); font-weight:500;">Hyderabad, India</span><br>
+      <span style="font-size:0.98em; color:var(--text-light); font-style:italic;">June 2020 – July 2021</span>
+    </div>
+    <ul style="margin-top:8px; color:inherit;">
+      <li>Developed an AI tool for Nottingham scoring to assess breast cancer grade on whole slide images, achieving a Dice score of 0.79 on mitosis detection and performance comparable to pathologists (published in Archives of Pathology & Laboratory Medicine).</li>
+      <li>Trained object detection models to identify masses and micro-calcifications in mammograms, reaching 90% and 92% recall, and deployed as a web application.</li>
+      <li>Built a Python-based web application to automate annotation of fields on PDFs, reducing annotation time by over 50%.</li>
+    </ul>
+  </div>
+</section>
 
 
+    <section id="projects">
+      <h2>Projects</h2>
+      <div id="repo-list">Loading projects...</div>
+    </section>
+   
+    <section id="education">
+  <h2>Education</h2>
+  <div class="edu">
+    <img src="https://assets.iu.edu/brand/3.3.x/trident-large.png" alt="Indiana University logo" style="width:44px;height:44px;border-radius:8px;object-fit:contain;background:#fff;border:1px solid #eee;padding:3px;margin-right:14px;vertical-align:middle;">
+    <div>
+      <strong>MS, Computer Science</strong> – Indiana University Bloomington<br>
+      <span style="font-size:0.99em; color:var(--text-light); font-weight:500;">Bloomington, IN</span><br>
+      <span style="font-size:0.98em; color:var(--text-light); font-style:italic;">2021 – 2023</span>
+    </div>
+  </div>
+  <div class="edu">
+    <img src="https://www.ifheindia.org/assets/img/Logo.svg" alt="ICFAI Foundation logo" style="width:44px;height:44px;border-radius:8px;object-fit:contain;background:#fff;border:1px solid #eee;padding:3px;margin-right:14px;vertical-align:middle;">
+    <div>
+      <strong>Bachelor of Technology in Computer Science and Engineering</strong> – ICFAI Foundation, Hyderabad<br>
+      <span style="font-size:0.99em; color:var(--text-light); font-weight:500;">Hyderabad, India</span><br>
+      <span style="font-size:0.98em; color:var(--text-light); font-style:italic;">2016 – 2020</span>
+    </div>
+  </div>
+</section>
 
-
-
-
-
-
-            </div>
+    <section id="skills">
+      <h2>Technical Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-item">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" alt="PyTorch"/>
+          <div>PyTorch</div>
         </div>
-    </section>
-    <section class="page-section portfolio" id="PUBLICATIONS">
-        <div class="container">
-            <!-- Portfolio Section Heading-->
-            <div class="text-center">
-                <h2 style="font-size: larger;color:white;">PUBLICATIONS</h2>
-            </div>
-            <!-- Icon Divider-->
-            <div class="divider-custom">
-                <div class="divider-custom-line"></div>
-                <div class="divider-custom-icon"><i class="fas fa-code"></i></div>
-                <div class="divider-custom-line"></div>
-            </div>
-            <!-- Portfolio Grid Items-->
-            <div class="row">
-                <div class="col-lg-4 col-sm-6 mb-4">
-                    <div class="card h-100">
-                        <img class="card-img-top" src="./assets/img/DPA.jpg" alt="NSFW Filter">
-                        <div class="card-body">
-                            <a target="_blank" href="https://digitalpathologyassociation.org/_data/media/
-                            351/10082020-022720.pdf">
-                                <h6 class="card-title" style="color: #117964;">
-                                    Deep Learning Based Mitoses Recognition and Concordance study
-                                    with Pathologists - Pathvision2020
-                                </h6>
-                            </a>
-
-                            <p class="card-text">
-                                <span class="badge badge-primary">Deep Learning</span>
-                                <span class="badge badge-warning">Computer Vision</span>
-                                </br></br>Our Algorithm on Mitosis detection in H&E histopathology images was presented
-                                at Pathvision2020 conference
-                            </p>
-
-
-                        </div>
-
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6 mb-4">
-                    <div class="card h-100">
-                        <img class="card-img-top" src="https://miro.medium.com/max/1400/1*WiNXqRK6YT4_wJfinFFPtg.jpeg" alt="">
-                        <div class="card-body">
-                            <a target="_blank"
-                                href="https://joshii-sripad.medium.com/using-pathomation-with-python-for-wsi-tile-extraction-on-ubuntu-126ec80cde55">
-                                <h6 class="card-title" style="color: #117964;">
-                                    Extract tiles from WSI using pathomation in python (Linux)
-                                </h6>
-                            </a>
-
-                            <p class="card-text">
-                                <span class="badge badge-primary">Computer Vision</span>
-                                <span class="badge badge-primary">Pathomation</span>
-                                <span class="badge badge-primary">python</span>
-
-                                <span class="badge badge-primary">Frames</span>
-                                </br></br> Pathomation tutorial (Installation and python package usage)
-
-                            </p>
-
-
-                        </div>
-                    </div>
-                </div>
-
-
-            </div>
-    </section>
-
-
-    <!-- <section class="page-section portfolio" id="skills">
-        <div class="container"> -->
-            <!-- Portfolio Section Heading-->
-            <!-- <div class="text-center">
-                <h2 style="font-size: larger;color:#117964;">SKILLS</h2>
-            </div>
-            Icon Divider -->
-            <!-- <div class="divider-custom">
-                <div class="divider-custom-line"></div>
-                <div class="divider-custom-icon"><i class="fas fa-code"></i></div>
-                <div class="divider-custom-line"></div>
-            </div> -->
-            <!-- Portfolio Grid Items-->
-            <!-- <div class="row">
-                <div class="col-lg-4 col-sm-6 mb-4">
-                    <div class="card h-100">
-                        <img class="card-img-top" src="./assets/img/pytorch.png" alt="Pytorch">
-                        <div class="card-body">
-                            <h6 class="card-title" style="color: #117964;">
-                                Pytorch - Deeplearning
-                            </h6>
-
-
-                        </div>
-
-                    </div>
-                </div> -->
-                <!-- <div class="col-lg-4 col-sm-6 mb-4">
-                    <div class="card h-100">
-                        <img class="card-img-top" src="./assets/img/python.png" alt="Python">
-                        <div class="card-body">
-                            <h6 class="card-title" style="color: #117964;">
-                                Python
-                            </h6>
-
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-sm-6 mb-4">
-                    <div class="card h-100">
-                        <img class="card-img-top" src="./assets/img/opencv.png" alt="OpenCV">
-                        <div class="card-body">
-                            <h6 class="card-title" style="color: #117964;">
-                                OpenCV
-                            </h6> -->
-
-<!-- 
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6 mb-4">
-                    <div class="card h-100">
-                        <img class="card-img-top" src="./assets/img/ccpp.jpeg" alt="C/ C++">
-                        <div class="card-body">
-                            <h6 class="card-title" style="color: #117964;">
-                                C / C++
-                            </h6>
-
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6 mb-4">
-                    <div class="card h-100">
-                        <img class="card-img-top" src="./assets/img/java.png" alt="JAVA">
-                        <div class="card-body">
-                            <h6 class="card-title" style="color: #117964;">
-                                Java
-                            </h6>
-
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-sm-6 mb-4">
-                    <div class="card h-100">
-                        <img class="card-img-top" src="./assets/img/SQL.png" alt="SQL">
-                        <div class="card-body">
-                            <h6 class="card-title" style="color: #117964;">
-                                mySQL
-                            </h6>
-
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6 mb-4">
-                    <div class="card h-100">
-                        <img class="card-img-top" src="./assets/img/flask.jpg" alt="Flask">
-                        <div class="card-body">
-                            <h6 class="card-title" style="color: #117964;">
-                                Flask - web development
-                            </h6>
-
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6 mb-4">
-                    <div class="card h-100">
-                        <img class="card-img-top" src="./assets/img/keras.png" alt="Keras">
-                        <div class="card-body">
-                            <h6 class="card-title" style="color: #117964;">
-                                Keras
-                            </h6>
-
-
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-    </section> -->
-
-    <section class="page-section portfolio bg-primary text-white mb-0" id="about">
-        <div class="container" style="background-color: black;">
-            <!-- About Section Heading-->
-            <div class="text-center">
-                <h2 style="font-size: larger;color:white;">ABOUT</h2>
-            </div>
-            <!-- Icon Divider-->
-            <div class="divider-custom">
-                <div class="divider-custom-line"></div>
-                <div class="divider-custom-icon"><i class="fas fa-random"></i></div>
-                <div class="divider-custom-line"></div>
-            </div>
-            <!-- About Section Content-->
-            <div class="text-center">
-                <p class="pre-wrap lead">
-                    Computer Science Graduate at IUB.
-                    
-                    Ex MLE at OnwardAssist.
-
-                    Interests - Medical Image analysis, Computer Vision, 3D reconstruction.
-
-                    Hobbies - Badminton, Skating, Swimming, Books.
-                    
-                   </p>
-               
-            </div>
+        <div class="skill-item">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow"/>
+          <div>TensorFlow</div>
         </div>
-    </section>
-
-
-
-    <section class="page-section portfolio bg-primary text-white mb-0" id="contact">
-        <div class="container" style="background-color: black;">
-            <!-- Contact Section Heading-->
-            <div class="text-center">
-                <h2 style="font-size: larger;color:white;">CONTACT</h2>
-            </div>
-            <!-- Icon Divider-->
-            <div class="divider-custom">
-                <div class="divider-custom-line"></div>
-                <div class="divider-custom-icon"><i class="fas fa-phone"></i></div>
-                <div class="divider-custom-line"></div>
-            </div>
-            <!-- Contact Section Content-->
-            <div class="row justify-content-center">
-                <!-- <div class="col-lg-4">
-                    <div class="d-flex flex-column align-items-center">
-                        <a href="tel:+91-8125286873">
-                            <div class="icon-contact mb-3"><i class="fas fa-mobile-alt"></i></div>
-                        </a>
-                        <div class="text-muted">Phone</div>
-                        <div class="lead font-weight-bold"><a href="tel:+91-8125286873"></a></div>
-                    </div>
-                </div> -->
-                <div class="col-lg-4">
-                    <div class="d-flex flex-column align-items-center">
-                        <a href="mailto:joshii.sripad@gmail.com">
-                            <div class="icon-contact mb-3"><i class="far fa-envelope"></i></div>
-                        </a>
-                        <div class="text-muted">Email</div><a class="lead font-weight-bold"
-                            href="mailto:joshii.sripad@gmail.com">joshii.sripad@gmail.com</a>
-                    </div>
-                </div>
-            </div>
+        <div class="skill-item">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"/>
+          <div>Python</div>
         </div>
+        <div class="skill-item">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg" alt="OpenCV"/>
+          <div>OpenCV</div>
+        </div>
+        <div class="skill-item">
+          <img src="https://scikit-learn.org/stable/_static/scikit-learn-logo-small.png" alt="Scikit-learn"/>
+          <div>Scikit-learn</div>
+        </div>
+        <div class="skill-item">
+          <img src="https://brandlogos.net/wp-content/uploads/2025/03/langchain-logo_brandlogos.net_9zgaw.png" alt="Langchain"/>
+          <div>Langchain</div>
+        </div>
+        <div class="skill-item">
+          <img src="https://cdn.prod.website-files.com/66841c2a95405226a60d332e/67372ce594995c3cfec35531_AI_20_retried.webp" alt="Langgraph"/>
+          <div>Langgraph</div>
+        </div>
+        <div class="skill-item">
+          <img src="https://ollama.com/public/ollama.png" alt="Ollama"/>
+          <div>Ollama</div>
+        </div>
+        <div class="skill-item">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java"/>
+          <div>Java</div>
+        </div>
+        <div class="skill-item">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL"/>
+          <div>SQL</div>
+        </div>
+        <div class="skill-item">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" alt="Flask"/>
+          <div>Flask</div>
+        </div>
+        <div class="skill-item">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git"/>
+          <div>Git</div>
+        </div>
+        <div class="skill-item">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker"/>
+          <div>Docker</div>
+        </div>
+        <div class="skill-item">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux"/>
+          <div>Linux</div>
+        </div>
+        <div class="skill-item">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg" alt="Jupyter"/>
+          <div>Jupyter</div>
+        </div>
+        <div class="skill-item">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VSCode"/>
+          <div>VS Code</div>
+        </div>
+        <div class="skill-item">
+          <img src="https://img.icons8.com/nolan/64/question-mark.png" alt="RAG" />
+          <div>RAG</div>
+        </div>
+      </div>
     </section>
-    <!-- <footer class="footer text-center">
-        
-    </footer> -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-    <!-- Third party plugin JS-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-    <!-- Core theme JS-->
-    <script src="js/scripts.js"></script>
-    <!-- GitHub buttons -->
-    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <section id="publications">
+      <h2>Publications</h2>
+      <div class="pub">
+        <a href="https://arxiv.org/abs/2310.19583" target="_blank">GC-MVSNet: Multi-View, Multi-Scale, Geometrically-Consistent Multi-View Stereo</a><br/>
+        WACV.
+      </div>
+      <div class="pub">
+        <a href="https://digitalpathologyassociation.org/_data/media/351/10082020-022720.pdf" target="_blank">Deep Learning Based Mitoses Recognition</a><br/>
+        PathVision 2020.
+      </div>
+      <div class="pub">
+        <a href="https://meridian.allenpress.com/aplm/article/doi/10.5858/arpa.2021-0299-OA/478885" target="_blank">Concordance in Breast Cancer Grading by Artificial Intelligence on Whole Slide Images Compares With a Multi-Institutional Cohort of Breast Pathologists </a><br/>
+        Archives of Pathology & Laboratory Medicine.
+      </div>
+      <div class="pub">
+        <a href="https://www.biorxiv.org/content/10.1101/2023.01.05.522764v1" target="_blank">Segmenting functional tissue units across human organs using community-driven development of generalizable machine learning algorithms</a><br/>
+        HuBMAP, BioRxiv 2023.
+      </div>
+    </section>
+    <section id="contact">
+      <h2>Contact</h2>
+      <div class="contact-info">
+        <p>Email: <a href="mailto:joshii.sripad@gmail.com">joshii.sripad@gmail.com</a></p>
+        <p>GitHub: <a href="https://github.com/j-sripad">@j-sripad</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/sripadjoshi/">/in/sripadjoshi</a></p>
+      </div>
+    </section>
+    <footer>
+      &copy; 2025 Sripad Joshi. All rights reserved.
+    </footer>
+  </main>
+  <script>
+    // Light/Dark theme toggle logic
+    function setTheme(theme) {
+      document.documentElement.setAttribute('data-theme', theme);
+      localStorage.setItem('theme', theme);
+      document.getElementById('theme-toggle').textContent = theme === 'light' ? '🌞' : '🌙';
+    }
+    (function() {
+      const saved = localStorage.getItem('theme');
+      if (saved) setTheme(saved);
+      else setTheme(window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+    })();
+    document.getElementById('theme-toggle').onclick = function() {
+      const current = document.documentElement.getAttribute('data-theme');
+      setTheme(current === 'dark' ? 'light' : 'dark');
+    };
+
+    function formatProjectName(name) {
+      const words = name.replace(/([a-z])([A-Z])/g, '$1 $2')
+                        .replace(/[-_]/g, ' ')
+                        .split(' ');
+      return words.map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+    }
+    fetch('https://api.github.com/users/j-sripad/repos')
+      .then(response => response.json())
+      .then(data => {
+        const list = document.getElementById('repo-list');
+        list.innerHTML = '';
+        data.filter(repo => {
+          const name = repo.name.toLowerCase();
+          return !repo.fork && !name.includes('sripad') && !name.includes('joshi');
+        })
+        .sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at))
+        .forEach(repo => {
+          const div = document.createElement('div');
+          div.className = 'project';
+          const title = formatProjectName(repo.name);
+          const description = repo.description || 'No description available.';
+          div.innerHTML = `<a href="${repo.html_url}" target="_blank">${title}</a><br/><small>${description}</small>`;
+          list.appendChild(div);
+        });
+      })
+      .catch(error => {
+        document.getElementById('repo-list').innerText = 'Failed to load projects.';
+        console.error('Error fetching repos:', error);
+      });
+  </script>
 </body>
-
 </html>
