@@ -241,15 +241,105 @@ footer {
   letter-spacing: 0.01em;
   font-weight: 500;
 }
-@media (max-width: 700px) {
-  main { margin-top: 3.2rem; }
-  .intro { flex-direction: column; align-items: flex-start; gap: 0.8rem; }
-  h1 { font-size: 1.35rem; }
-  h2 { font-size: 1.01rem; }
-  nav { padding: 0.6rem 0.5rem; }
-  .skill-item { width: 75px; font-size: 0.81rem; }
-  .skill-item img { width: 29px; height: 29px; }
+@media (max-width: 900px) {
+  main {
+    margin-top: 4.3rem;
+    padding: 0 0.4rem;
+    max-width: 99vw;
+  }
 }
+@media (max-width: 700px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0.5rem 0.7rem 0.5rem 0.7rem;
+    gap: 0.6rem;
+  }
+  nav .logo {
+    font-size: 1.02rem;
+    margin-bottom: 0.2rem;
+  }
+  nav a {
+    margin-left: 0.72rem;
+    font-size: 0.88rem;
+  }
+  .theme-toggle {
+    margin-left: 0.7rem;
+    font-size: 1.06rem;
+  }
+  main {
+    margin-top: 3.4rem;
+    padding: 0 0.3rem;
+    max-width: 100vw;
+  }
+  h1 {
+    font-size: 1.12rem;
+    margin-bottom: 0.14rem;
+  }
+  h2 {
+    font-size: 0.99rem;
+    margin-top: 1.1rem;
+    padding-bottom: 0.18rem;
+  }
+  .intro {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.7rem;
+  }
+  .intro img {
+    width: 95px;
+    height: 95px;
+    margin-bottom: 0.2rem;
+  }
+  .intro p {
+    max-width: 98vw;
+    font-size: 0.96rem;
+  }
+  .links a {
+    font-size: 0.85rem;
+    padding: 0.24rem 0.6rem;
+    margin-right: 0.4rem;
+  }
+  section {
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.9rem;
+  }
+  .skills-grid {
+    gap: 0.44rem 0.7rem;
+    margin-top: 0.6rem;
+    margin-bottom: 0.2rem;
+  }
+  .skill-item {
+    width: 64px;
+    font-size: 0.68rem;
+    padding: 0.5rem 0.2rem 0.4rem 0.2rem;
+  }
+  .skill-item img {
+    width: 22px;
+    height: 22px;
+    margin-bottom: 0.18rem;
+  }
+  .project, .job, .edu, .pub {
+    padding: 0.72rem 0.4rem;
+    font-size: 0.91rem;
+    margin-top: 0.7rem;
+  }
+  .job img, .edu img {
+    width: 32px !important;
+    height: 32px !important;
+    margin-right: 7px !important;
+    padding: 2px !important;
+  }
+  .contact-info p {
+    font-size: 0.87rem;
+    word-break: break-word;
+  }
+  footer {
+    font-size: 0.81rem;
+    margin: 1.5rem 0 0.7rem;
+  }
+}
+
 
   </style>
 </head>
@@ -492,11 +582,16 @@ footer {
       localStorage.setItem('theme', theme);
       document.getElementById('theme-toggle').textContent = theme === 'light' ? '🌞' : '🌙';
     }
+    // (function() {
+    //   const saved = localStorage.getItem('theme');
+    //   if (saved) setTheme(saved);
+    //   else setTheme(window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+    // })();
     (function() {
-      const saved = localStorage.getItem('theme');
-      if (saved) setTheme(saved);
-      else setTheme(window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
-    })();
+  const saved = localStorage.getItem('theme');
+  if (saved) setTheme(saved);
+  else setTheme('light'); // Always default to light mode
+})();
     document.getElementById('theme-toggle').onclick = function() {
       const current = document.documentElement.getAttribute('data-theme');
       setTheme(current === 'dark' ? 'light' : 'dark');
